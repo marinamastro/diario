@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+
+#Ctitulo{
+    font-family: 'Cambo', serif;
+    background-color: rgb(5, 3, 143);  
+    padding:1rem;
+    color:white !important;    
+}
+#titulo{    
+    font-family: 'Cambo', serif;
+    font-size:2.2rem   
+}
+.fa-bars{   
+  
+    font-size: 2rem;  
+ }
+ 
+.fa-bars:hover{
+    cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#titulo:hover{
+    text-decoration: underline;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.noticiaP{
+    margin-top:2rem;    
+}
+.noticiaD{
+    margin-top:2rem;
+    border-left:1px solid rgb(68, 68, 68);
+    padding-left:2rem
+}
+#noticiaP:hover{
+    box-shadow: 2px 2px 2px  black;
+}
+.seccion{
+    background-color: yellow;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#noticia{
+    border-right: 1px solid rgb(68, 68, 68);
 }
 
-.App-link {
-  color: #61dafb;
+.por{
+    font-size: 0.8rem;
+    font-style: italic;
+}
+a:hover{
+text-decoration: none;   
+
+}
+a{
+    color:white
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#contenedorMasNoticias{
+    margin-top:2rem;
+    border-top:1px solid rgb(68, 68, 68);
+}
+
+.masNoticia{
+    padding: 1rem;   
+}
+
+.masNoticia:hover img{
+    filter: brightness(130%);
+     box-shadow: 2px 2px 5px  black;
+}
+
+.masL{
+    margin-top:2rem;
+    border-left:1px solid rgb(68, 68, 68);
+    padding-left: 1rem;
+}
+.menu{
+    position:relative;
+    top:10rem;
+    left:5rem;
+    background-color: rgb(5, 3, 143);
+}
+.categoria:hover{
+box-shadow: 0.2rem 0.2rem 0.5rem rgb(68, 68, 68);
+}
+.categoria{
+    padding-top:0.5rem
+}
+.tituloSeccion{
+    margin-left:1.7rem;
+    
+}
+.masN:hover{
+    font-weight: bolder;
 }
