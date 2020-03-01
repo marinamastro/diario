@@ -89,5 +89,27 @@ box-shadow: 0.2rem 0.2rem 0.5rem rgb(68, 68, 68);
     
 }
 .masN:hover{
-    font-weight: bolder;
+    font-weight: bold;
+}
+.comentario{
+    font-size:0.95rem
+}
+.fa-user{
+    color:rgb(5, 3, 143)
+}
+.email{
+    font-weight: bold;
+}
+.body{
+    font-style: italic;
+}
+.botonForm{
+    background-color:rgb(5, 3, 143);
+    border:none;
+    font-size:0.9rem;
+    margin-bottom: 1rem;
+}
+.botonForm:hover{
+    background-color: blue !important;  
+
 }

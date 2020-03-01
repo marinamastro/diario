@@ -1,5 +1,5 @@
 import React from "react";
-import {masNoticias,noticiaPrincipal} from "./datos"
+import {Noticias,noticiaPrincipal} from "./datos"
 
 const context = React.createContext();
 
@@ -8,20 +8,28 @@ class Provider extends React.Component{
         news:[],
         noticiaPrincipal:noticiaPrincipal,
         noticiaDetalle:{},
-        noticiasMasLeidas:[masNoticias[2]],
+        noticiasMasLeidas:[Noticias[2]],
         menu:[],
         categoria:[],
         categoriaOn:false,        
-        seccion:[]
+        seccion:[],
+        comments:[],
+        comentariosFiltrados:[]
+        
+
        
     };
     componentDidMount(){
-        this.setNews()       
+        this.setNews();
+        fetch("https://jsonplaceholder.typicode.com/comments")
+        .then(response=>response.json())       
+        .then(data=>this.setState({comments:data}))        
+            
     };
     
     setNews=()=>{
        let news=[];
-       masNoticias.forEach(item=>{
+       Noticias.forEach(item=>{
            const singleItem={...item};
            news=[...news,singleItem]
        })
@@ -33,8 +41,10 @@ class Provider extends React.Component{
         return item
     };
     handleDetail=(id)=>{
-            const item = this.getItem(id);
-            this.setState({noticiaDetalle:item})
+        const item = this.getItem(id);
+        const comments = this.state.comments;
+        let comentarios = comments.filter(x=>x.postId===id);
+        this.setState({noticiaDetalle:item,comentariosFiltrados:comentarios})
     };
     handleDetailPrincipal=()=>{
         const item = noticiaPrincipal;
@@ -57,18 +67,22 @@ class Provider extends React.Component{
     };
 
     filtrarCategoria=(categoria)=>{
-        const datos= masNoticias.filter(x=>{                
+        const datos= Noticias.filter(x=>{                
         return x.seccion===categoria})
         this.setState({categoria:datos,categoriaOn:true,seccion:categoria})
     };
 
     categoriaOff=()=>{
         this.setState({categoriaOn:false})
-    }
+    };
+  
+   
+
+    
 
    
 
-    render(){
+    render(){     
         return(
             <context.Provider value={{...this.state,
             handleDetail:this.handleDetail,

@@ -1,4 +1,4 @@
-const masNoticias = [
+const Noticias = [
     {
         id:1,
         titulo:"En pesos. La inversión para novatos que recomiendan los influencers financieros",
@@ -178,4 +178,4 @@ const noticiaPrincipal=
     };
 
 
-export  {masNoticias,noticiaPrincipal}
+export  {Noticias,noticiaPrincipal}
