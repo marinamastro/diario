@@ -23,14 +23,9 @@ class Provider extends React.Component{
         fetch("https://jsonplaceholder.typicode.com/comments")
         .then(response=>response.json())       
         .then(data=>this.setState({comments:data}));
-        localStorage.getItem("detalle")&&this.setState({noticiaDetalle:JSON.parse(localStorage.getItem("detalle"))});
-        localStorage.getItem("comentarios")&&this.setState({comentariosFiltrados:JSON.parse(localStorage.getItem("comentarios"))})        
+       
     };
 
-    componentWillUpdate(nextProps,nextState){
-        localStorage.setItem("detalle",JSON.stringify(nextState.noticiaDetalle));
-        localStorage.setItem("comentarios",JSON.stringify(nextState.comentariosFiltrados))             
-    };
 
     setNews=()=>{
        let news=[];
