@@ -4,6 +4,7 @@ import {Noticias,noticiaPrincipal} from "./datos"
 const context = React.createContext();
 
 class Provider extends React.Component{
+    
     state={
         news:[],
         noticiaPrincipal:noticiaPrincipal,
@@ -14,19 +15,23 @@ class Provider extends React.Component{
         categoriaOn:false,        
         seccion:[],
         comments:[],
-        comentariosFiltrados:[]
-        
-
-       
-    };
+        comentariosFiltrados:[]      
+};
+    
     componentDidMount(){
         this.setNews();
         fetch("https://jsonplaceholder.typicode.com/comments")
         .then(response=>response.json())       
-        .then(data=>this.setState({comments:data}))        
-            
+        .then(data=>this.setState({comments:data}));
+        localStorage.getItem("detalle")&&this.setState({noticiaDetalle:JSON.parse(localStorage.getItem("detalle"))});
+        localStorage.getItem("comentarios")&&this.setState({comentariosFiltrados:JSON.parse(localStorage.getItem("comentarios"))})        
     };
-    
+
+    componentWillUpdate(nextProps,nextState){
+        localStorage.setItem("detalle",JSON.stringify(nextState.noticiaDetalle));
+        localStorage.setItem("comentarios",JSON.stringify(nextState.comentariosFiltrados))             
+    };
+
     setNews=()=>{
        let news=[];
        Noticias.forEach(item=>{
@@ -74,11 +79,7 @@ class Provider extends React.Component{
 
     categoriaOff=()=>{
         this.setState({categoriaOn:false})
-    };
-  
-   
-
-    
+    }; 
 
    
 
