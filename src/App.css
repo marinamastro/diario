@@ -2,7 +2,7 @@
 #Ctitulo{
     font-family: 'Cambo', serif;
     background-color: rgb(5, 3, 143);  
-    padding:1rem;
+    padding:0.5rem;
     color:white !important;    
 }
 #titulo{    
@@ -13,7 +13,13 @@
   
     font-size: 2rem;  
  }
- 
+ button.navbar-toggler.collapsed{
+     background-color:white !important
+ }
+
+ a.dropdown-toggle.nav-link{
+     color:white !important
+ }
 .fa-bars:hover{
     cursor: pointer;
 }

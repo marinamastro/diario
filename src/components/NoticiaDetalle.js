@@ -25,7 +25,6 @@ export default class NoticiaDetalle extends Component {
                             <hr/>
                             <Comentarios/>  
                             <Formulario/> 
-
                         </Container>
                         )
                     }
