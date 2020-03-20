@@ -12,7 +12,7 @@ export default function CategoriasFiltradas(props) {
                return(  
                 <div className="categoria" onClick={()=>{data.handleDetail(id);
                 data.handleClicks(id);data.categoriaOff()}}>
-                <Link to="/detalle" style={{color:"black"}}>                             
+                <Link to={`/detalle/${id}`} style={{color:"black"}}>                             
                 <Container>
                 <Col md={10} lg={10} >                
                 <Row>
@@ -22,7 +22,7 @@ export default function CategoriasFiltradas(props) {
                  {descripcion}
                 </Row>
                 <Row  >
-                <Col md={6} lg={6} > 
+                <Col md={6} lg={6} style={{paddingLeft: 0,marginTop: "1rem"}}> 
                     <Image src={img} alt="" fluid/>
                 </Col>
                 </Row>

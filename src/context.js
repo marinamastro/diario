@@ -51,13 +51,14 @@ class Provider extends React.Component{
         this.setState({noticiaDetalle:item})
 };
     handleClicks=(id)=>{
-        let news = this.state.news;
-        let index = news.indexOf(this.getItem(id));
-        news[index].clicks+=1;
+        let news = this.state.news;        
+        let index = news.indexOf(this.getItem(id));      
+        news[index].clicks+=1;        
         this.setState(()=>{
            return {news:news}
         },this.noticiasMasLeidas())       
     };
+
     noticiasMasLeidas=()=>{   
         let masleidas=this.state.news.filter((x)=>{
             return x.clicks >0                        
@@ -85,7 +86,8 @@ class Provider extends React.Component{
             handleClicks:this.handleClicks,           
             filtrarCategoria:this.filtrarCategoria,
             categoriaOff:this.categoriaOff,
-            handleDetailPrincipal:this.handleDetailPrincipal
+            handleDetailPrincipal:this.handleDetailPrincipal,
+            
             }}>
                 {this.props.children}
             </context.Provider>

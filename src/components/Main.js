@@ -13,7 +13,7 @@ export default class Main extends Component {
           <Container>
             <Switch>
               <Route exact path="/" component={Noticias}/>
-              <Route exact path="/detalle" component={Detalle}/>             
+              <Route  path={`/detalle/:id`} component={Detalle}/>             
             </Switch>            
           </Container>
           

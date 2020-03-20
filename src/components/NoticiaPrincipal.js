@@ -4,9 +4,9 @@ import {Link} from "react-router-dom";
 
 export default class NoticiaPrincipal extends Component {
     render() {
-        const {seccion,titulo,descripcion,img,por}=this.props.datos;        
+        const {seccion,titulo,descripcion,img,por,id}=this.props.datos;        
         return (
-            <Link to="/detalle" style={{color:"black"}} onClick={()=>{this.props.todos.handleDetailPrincipal()}}>
+            <Link to={`/detalle/${id}`} style={{color:"black"}} onClick={()=>{this.props.todos.handleDetailPrincipal()}}>
                 <Row className="noticiaP">    
                     <Col md={4} lg={4} xl={4} id="noticia">
                         <p><span className="seccion">{seccion}</span></p>
