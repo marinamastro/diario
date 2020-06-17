@@ -1,5 +1,5 @@
 import React from "react";
-import {Noticias,noticiaPrincipal} from "./datos"
+import {Noticias,noticiaPrincipal} from "./datos";
 
 const context = React.createContext();
 
@@ -19,8 +19,13 @@ class Provider extends React.Component{
 };
     
     componentDidMount(){
+        var myHeaders = new Headers();
+        myHeaders = new Headers({
+         "Content-Type": "application/json",
+        "mode": "no-cors",    
+        });
         this.setNews();
-        fetch("https://jsonplaceholder.typicode.com/comments")
+        fetch("https://jsonplaceholder.typicode.com/comments",myHeaders)
         .then(response=>response.json())       
         .then(data=>this.setState({comments:data}));
        
