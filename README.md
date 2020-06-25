@@ -1,5 +1,7 @@
 Diario de noticias donde aplico el nuevo concepto aprendido React.Context, comentarios traídos de la llamada a la API jsonplaceholder y datos de cada noticia almacenados en un archivo .json externo
 
+https://react-diario.netlify.app/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
