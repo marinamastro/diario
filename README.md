@@ -1,4 +1,4 @@
-Diario de noticias donde aplico el nuevo concepto aprendido React.Context, comentarios traídos de la llamada a la API jsonplaceholder y datos de cada noticia almacenados en un archivo .json externo
+Diario de noticias donde aplico React.Context y react-router-dom, comentarios traídos de la llamada a la API jsonplaceholder y datos de cada noticia almacenados en un archivo .json externo
 
 https://react-diario.netlify.app/
 
